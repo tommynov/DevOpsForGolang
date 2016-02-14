@@ -15,8 +15,8 @@ script:
     - $HOME/gopath/bin/goveralls -repotoken $COVERALLS_TOKEN ./...
 after_success:
     - docker login -e=$DOCKER_EMAIL -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
-    - docker build -t budougumi0617/devopsforgolang:$TRAVIS_COMMIT .
-    - docker push budougumi0617/devopsforgolang:$TRAVIS_COMMIT
+    - docker build -t budougumi0617/devopsforgolang .
+    - docker push budougumi0617/devopsforgolang
 env:
     global:
         secure: E7zS10GnK+bQx7iVzdigwlqOmUqAy2o1cd6tu33l6Vkbd7dxYHdzW0Bf2nxX+RKlLT6No8mL/v6p6qP6lgcT3bk+DWtvyzi/H8mw+Q9SeuSTHcZfJmHvD9skUsby1Pd4RIi86nrwFM7ubKq0HQdP+QGLkXeQlso1F68JjVOM+wSeJbEyQSvOxoHm8DWx1PeLtx/KHGwR8o+njiV/kZKetFgU7iQEhOsRPjiWdO/AaeNtEuDOPUDDxWklxClfaCYKOKOMJ1bXAed/PJ8EH/ly6t4Hl8KniaOVeL8h5rj+Aw4IYsSR5LNQgKIEZzJlNKjUhdr49u3k3x0VzhlYriYSU7XTER2zA7jxUMWEP8uIEr6dpb+OoMqbbrqicjSPDEBLrGaNKaVtgwIT6kwt2vWECaFbrF0K7ICVTIUlAZcoaXHZ5w+xdhTx4o2ZZ4BRlonwscJxbbJ7AvqnrCAWIYHFsEIpTUX9IEEbVcQKdMGWH7dfomdC6y9emPCzkYg+TGVP9OW3WRXFi1q3Mf0R7MumkDTJie/g+EVFuVz6qPKYv660ZVOtP8Xg3ZU00045/LL7DD6ItrxN6xH0DDSC+8C/8iD6iGjUylCCsfpRyeJErX2aKW+3CbRh4CWhyEh2qe8MPTg0I+YUkWMVnnpEaug0YGXxRCwc/Tuqt2kyyV+GaD4=
