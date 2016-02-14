@@ -14,8 +14,8 @@ before_install:
 script:
     - $HOME/gopath/bin/goveralls -repotoken $COVERALLS_TOKEN ./...
 after_success:
-    - docker login -e=”$DOCKER_EMAIL” -u=”$DOCKER_USERNAME” -p=”$DOCKER_PASSWORD”
-    - docker build -t “budougumi0617/devopsforgolang:$TRAVIS_COMMIT” .
+    - docker login -e=$DOCKER_EMAIL -u=$DOCKER_USERNAME -p=$DOCKER_PASSWORD
+    - docker build -t budougumi0617/devopsforgolang:$TRAVIS_COMMIT .
     - docker push budougumi0617/devopsforgolang:$TRAVIS_COMMIT
 env:
     global:
