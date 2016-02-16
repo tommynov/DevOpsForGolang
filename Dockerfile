@@ -1,16 +1,14 @@
 FROM golang:1.5.3-alpine
 
 RUN mkdir -p /go/src/app
-WORKDIR /go/src/app
 
-# this will ideally be built by the ONBUILD below ;)
-CMD ["go-wrapper", "run"]
+# Copy the local package files to the container’s workspace.
+ADD . /go/src/app
 
-ONBUILD COPY . /go/src/app
-ONBUILD RUN go-wrapper download
-ONBUILD RUN go-wrapper install
+# Build the command inside the container.
+RUN go install app
 
-# Run the golang-docker command by default when the container starts.
+# Run the command when the container starts.
 ENTRYPOINT /go/bin/app
 
 EXPOSE 8080/tcp
