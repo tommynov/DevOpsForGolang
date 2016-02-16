@@ -6,3 +6,8 @@
 
 
 This repository is golang web application for DevOps demonstration.
+
+Release image repository:
+https://hub.docker.com/r/budougumi0617/devopsforgolang/
+
+
