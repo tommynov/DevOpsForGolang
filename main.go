@@ -40,7 +40,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	count++
 	mu.Unlock()
 	fmt.Fprintf(w, "URL.Path = %q\n", r.URL.Path)
-	fmt.Fprintln(w, "日本語のテスト\n")
+	fmt.Fprintln(w, "おにぎり\n")
 }
 
 // counter echoes the number of calls so far.
