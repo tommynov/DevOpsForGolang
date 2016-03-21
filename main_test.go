@@ -3,7 +3,6 @@ package main
 import "testing"
 
 func TestHandler(t *testing.T) {
-	/*
 		var tests = []struct {
 			args     []string
 			expected string
@@ -20,5 +19,5 @@ func TestHandler(t *testing.T) {
 			if !strings.Contains(got, test.expected) {
 				t.Errorf("Result = %q, Expected %q", got, test.expected)
 			}
-		}*/
+		}
 }
