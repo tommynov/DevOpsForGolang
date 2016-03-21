@@ -1,23 +1,14 @@
 package main
 
-import "testing"
+import (
+	"bytes"
+	"testing"
+)
 
-func TestHandler(t *testing.T) {
-		var tests = []struct {
-			args     []string
-			expected string
-		}{
-			{[]string{"fetch", "https://google.com"}, "https://google.com"},
-		}
-
-		for _, test := range tests {
-			os.Args = test.args
-
-			stdout = new(bytes.Buffer) // captured output
-			main()
-			got := stdout.(*bytes.Buffer).String()
-			if !strings.Contains(got, test.expected) {
-				t.Errorf("Result = %q, Expected %q", got, test.expected)
-			}
-		}
+func TestLissajous(t *testing.T) {
+	got := new(bytes.Buffer) // captured output
+	lissajous(got)
+	if size := got.Len(); size == 0 {
+		t.Errorf("Result data size = %d", size)
+	}
 }
